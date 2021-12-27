@@ -30,8 +30,8 @@ keymap("n", "<leader>w", ":bd<CR>", opts)
 keymap("n", "<F12>", ":silent !open -a /Applications/Google\\ Chrome.app %", opts)
 
 -- These commands will move the current buffer backwards or forwards in the bufferline
-keymap("n", "<C-l>", ":BufferLineMoveNext<CR>", opts)
-keymap("n", "<C-h>", ":BufferLineMovePrev<CR>", opts)
+keymap("n", "<S-l>", ":BufferLineMoveNext<CR>", opts)
+keymap("n", "<S-h>", ":BufferLineMovePrev<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -40,8 +40,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<TAB>", ":bnext<CR>", opts)
+keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -71,4 +71,5 @@ keymap("n", "<leader><S-f>", "<cmd>Telescope live_grep<cr>", opts)
 
 -- NvimTree --
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", {})
+keymap("n", "<leader><S-e>", ":NvimTreeFindFile<CR>", {})
 

@@ -48,7 +48,7 @@ return packer.startup(function(use)
 
   use {'akinsho/bufferline.nvim'}
   use {'nvim-lualine/lualine.nvim' }
-  use {'kyazdani42/nvim-tree.lua', config = function() require'nvim-tree'.setup {} end }
+  use {'kyazdani42/nvim-tree.lua'}
 
   -- LSP
   use {'neoclide/coc.nvim', branch = 'release'}
