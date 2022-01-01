@@ -1,9 +1,9 @@
-require "plugins.coc"
-require "plugins.telescope"
-require "plugins.treesitter"
-require "plugins.gitsigns-conf"
-require "plugins.nvim-tree-conf"
-require "plugins.lualine-conf"
+require "plugins-conf.coc"
+require "plugins-conf.telescope"
+require "plugins-conf.treesitter"
+require "plugins-conf.gitsigns"
+require "plugins-conf.nvim-tree"
+require "plugins-conf.lualine"
 
 require("bufferline").setup()
 require("Comment").setup()
@@ -52,8 +52,6 @@ return packer.startup(function(use)
   use "tpope/vim-surround"
   use "tpope/vim-repeat"
   use {"neoclide/coc.nvim", branch = "release"}
-  use "EdenEast/nightfox.nvim"
-  use "martinsione/darkplus.nvim"
   use "nvim-telescope/telescope.nvim"
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use "p00f/nvim-ts-rainbow"
@@ -61,6 +59,9 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip"
   use "lewis6991/gitsigns.nvim"
   use "rafamadriz/friendly-snippets"
+
+  -- colorscheme
+  use "sainnhe/gruvbox-material"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
