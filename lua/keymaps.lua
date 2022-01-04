@@ -24,7 +24,7 @@ keymap("n", "<C-z>", "", opts)
 keymap("n", "<leader><CR>", ":noh<cr>", opts)
 
 -- Buffers
-keymap("n", "<leader>w", ":bd<CR>", opts)
+keymap("n", "<leader>w", ":Bdelete<CR>", opts)
 
 -- Open in chrome
 keymap("n", "<F12>", ":silent !open -a /Applications/Google\\ Chrome.app %", opts)

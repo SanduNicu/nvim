@@ -59,6 +59,8 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip"
   use "lewis6991/gitsigns.nvim"
   use "rafamadriz/friendly-snippets"
+  use "famiu/bufdelete.nvim"
+  use "tpope/vim-fugitive"
 
   -- colorscheme
   use "sainnhe/gruvbox-material"
