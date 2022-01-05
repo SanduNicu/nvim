@@ -1,6 +1,3 @@
-local opt = vim.opt
-local cmd = vim.cmd
-
 local options = {
   backup = false,                          -- creates a backup file
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
@@ -37,14 +34,16 @@ local options = {
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   hidden = true,
+  foldmethod = "indent",
+  foldlevel = 99,
 }
 
-opt.shortmess:append "c"
+vim.opt.shortmess:append "c"
 
 for k, v in pairs(options) do
-  opt[k] = v
+  vim.opt[k] = v
 end
 
-cmd "set whichwrap+=<,>,[,],h,l"
-cmd [[set iskeyword+=-]]
-cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+vim.cmd "set whichwrap+=<,>,[,],h,l"
+vim.cmd [[set iskeyword+=-]]
+vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work

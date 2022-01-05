@@ -8,13 +8,10 @@ require "plugins-conf.lualine"
 require("bufferline").setup()
 require("Comment").setup()
 
-local fn = vim.fn
-local cmd = vim.cmd
-
 -- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system {
+local install_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  PACKER_BOOTSTRAP = vim.fn.system {
     "git",
     "clone",
     "--depth",
@@ -23,7 +20,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     install_path,
   }
   print "Installing packer close and reopen Neovim..."
-  cmd [[packadd packer.nvim]]
+  vim.cmd [[packadd packer.nvim]]
 end
 
 local status_ok, packer = pcall(require, "packer")
@@ -63,10 +60,8 @@ return packer.startup(function(use)
   use "tpope/vim-fugitive"
 
   -- colorscheme
-  use "sainnhe/gruvbox-material"
+  use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
