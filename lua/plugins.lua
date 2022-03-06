@@ -55,6 +55,7 @@ return packer.startup(function(use)
 	use("tpope/vim-fugitive")
 	use("christoomey/vim-tmux-navigator")
 	use("windwp/nvim-autopairs")
+	use("sindrets/diffview.nvim")
 
 	-- buffers
 	use("akinsho/bufferline.nvim")
