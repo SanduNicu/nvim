@@ -86,6 +86,9 @@ keymap("n", "<leader>di", '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ b
 keymap("n", "<leader>fo", ":Format<CR>", {})
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 
+-- format on save
+vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]])
+
 -- Troble
 keymap("n", "<leader>xx", "<cmd>Trouble<cr>", opts)
 keymap("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", opts)

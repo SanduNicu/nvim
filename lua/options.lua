@@ -36,6 +36,9 @@ local options = {
 	hidden = true,
 	foldmethod = "indent",
 	foldlevel = 99,
+	fillchars = {
+		eob = " ", -- suppress ~ at EndOfBuffer
+	},
 }
 
 vim.opt.shortmess:append("c")
