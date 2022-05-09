@@ -1,11 +1,3 @@
--- return {
--- 	init_options = {
--- 		preferences = {
--- 			importModuleSpecifierPreference = "relative",
--- 		},
--- 	},
--- }
-
 local M = {}
 
 M.setup = function(on_attach, capabilities)
@@ -23,6 +15,11 @@ M.setup = function(on_attach, capabilities)
 
 				on_attach(client, bufnr)
 			end,
+			init_options = {
+				preferences = {
+					importModuleSpecifierPreference = "relative",
+				},
+			},
 			capabilities = capabilities,
 		},
 	})

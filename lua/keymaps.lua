@@ -27,8 +27,8 @@ keymap("n", "<leader>w", ":Bdelete<CR>", opts)
 keymap("n", "<F12>", ":silent !open -a /Applications/Google\\ Chrome.app %", opts)
 
 -- These commands will move the current buffer backwards or forwards in the bufferline
-keymap("n", "<S-l>", ":BufferLineMoveNext<CR>", opts)
-keymap("n", "<S-h>", ":BufferLineMovePrev<CR>", opts)
+-- keymap("n", "<S-l>", ":BufferLineMoveNext<CR>", opts)
+-- keymap("n", "<S-h>", ":BufferLineMovePrev<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -85,9 +85,6 @@ keymap("n", "<leader>ds", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 keymap("n", "<leader>di", '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>', opts)
 keymap("n", "<leader>fo", ":Format<CR>", {})
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
-
--- format on save
-vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]])
 
 -- Troble
 keymap("n", "<leader>xx", "<cmd>Trouble<cr>", opts)

@@ -29,14 +29,16 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 local on_attach = function(client)
-	if client.resolved_capabilities.document_formatting then
-		vim.cmd([[
+	if client.name == "tsserver" then
+		client.resolved_capabilities.document_formatting = false
+	end
+	-- format on save
+	vim.cmd([[
             augroup LspFormatting
                 autocmd! * <buffer>
                 autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
             augroup END
             ]])
-	end
 	require("illuminate").on_attach(client)
 end
 
