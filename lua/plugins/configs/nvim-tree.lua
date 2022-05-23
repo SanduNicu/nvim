@@ -18,4 +18,8 @@ nvim_tree.setup({
 		update_cwd = false,
 		ignore_list = {},
 	},
+	system_open = {
+		cmd = "open",
+		args = { "." },
+	},
 })
